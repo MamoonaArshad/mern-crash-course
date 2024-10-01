@@ -1,9 +1,11 @@
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { Button, Container, Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { FcAddImage, FcIdea, FcNoIdea } from "react-icons/fc";
 
 const Navbar = () => {
+  const { colorMode, toggleColorMode} = useColorMode();
   return (
-    <Container maxW={"1140px"} px={4}>
+    <Container maxW={"1140px"} px={4} >
       <Flex
         h={16}
         alignItems={"centre"}
@@ -23,8 +25,23 @@ const Navbar = () => {
         >
           <Link to={"/"}>Product store</Link>
         </Text>
+
+        <HStack spacing={4} alignItems={"centre"}>
+        <Link to={"/create"}>
+          <Button>
+            <FcAddImage fontSize={20} />
+          </Button>
+        </Link>
+
+
+        <Button onClick={toggleColorMode}>
+          {colorMode == 'dark' ? <FcIdea fontSize={20}/> : <FcNoIdea fontSize={20}/> }
+          
+        </Button>
+        </HStack>
       </Flex>
-    </Container>
+      </Container>
+    
   );
 };
 
