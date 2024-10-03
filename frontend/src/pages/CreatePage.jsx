@@ -1,15 +1,18 @@
 import { Box, Button, Container, Heading, Input, VStack, useColorModeValue,  } from "@chakra-ui/react";
-
-
 import { useState } from "react"
+
+const emptyProductProperty = {
+  name: "",
+ price: "",
+ image: "",
+}
 const CreatePage = () => {
-  const [newProduct, setNewProduct] = useState({
-    name: "",
-    price: "",
-    image: "",
-  });
+  const [newProduct, setNewProduct] = useState(
+    emptyProductProperty
+  );
   const handleAddProduct = () => {
-    return console.log(newProduct)
+    console.log(newProduct);
+    setNewProduct(emptyProductProperty);
   }
   return (
     <Container maxW={"container.sm"}>
