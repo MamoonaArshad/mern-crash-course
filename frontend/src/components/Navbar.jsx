@@ -1,9 +1,11 @@
 import { Button, Container, Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FcAddImage, FcIdea, FcNoIdea } from "react-icons/fc";
+import { useProductStore } from "../store/product";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode} = useColorMode();
+
   return (
     <Container maxW={"1140px"} px={4} >
       <Flex
