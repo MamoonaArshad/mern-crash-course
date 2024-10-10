@@ -18,6 +18,12 @@ export const useProductStore = create((set) => ({
         const data = await res.json()
         set((state) => ({ products:[ ...state.products, data.data] }))
         return {success: true, message: "Your object has been created" }
+    },
+    fetchProducts: async (products) => { 
+        const res = await fetch("/api/products");
+        const data = await res.json();
+        set({products: data.data})
+
     }
 }));
 
