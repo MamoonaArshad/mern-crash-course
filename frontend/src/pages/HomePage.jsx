@@ -1,9 +1,8 @@
-import { Container, VStack, Text, HStack, textDecoration, SimpleGrid } from '@chakra-ui/react'
+import { Container, VStack, Text, HStack, SimpleGrid } from '@chakra-ui/react'
 import { FcLikePlaceholder  } from "react-icons/fc";
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { useProductStore } from '../store/product';
-import Product from '../../../backend/models/product.model';
 import ProductCard from '../components/ProductCard';
 
 const HomePage = () => {
@@ -11,7 +10,7 @@ const HomePage = () => {
   useEffect(() => {
     fetchProducts();
   }) 
-  console.log('products', products)
+  
   return (
     <Container maxW={Container.x1} py={12}>
       <VStack spacing={0}>
