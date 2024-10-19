@@ -17,6 +17,8 @@ const emptyProductProperty = {
   image: "",
 };
 
+
+
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState(emptyProductProperty);
   const { createProduct } = useProductStore();
